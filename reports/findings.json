@@ -1,0 +1,368 @@
+{
+ "harvest": {
+  "total": 4012096,
+  "with_ids": 987849,
+  "schemas": {
+   "Occupancy": 993687,
+   "Vessel": 10184,
+   "Company": 219555,
+   "Person": 1123024,
+   "LegalEntity": 62262,
+   "Succession": 19414,
+   "Family": 50064,
+   "Organization": 70281,
+   "UnknownLink": 49007,
+   "Ownership": 195557,
+   "Address": 31657,
+   "Directorship": 90132,
+   "Airplane": 342,
+   "Security": 207454,
+   "Position": 209878,
+   "Documentation": 13612,
+   "Representation": 1690,
+   "Employment": 1554,
+   "Membership": 2087,
+   "PublicBody": 59,
+   "Associate": 2447,
+   "Sanction": 623333,
+   "Passport": 11562,
+   "Identification": 5806,
+   "CryptoWallet": 13982,
+   "Article": 3407,
+   "Payment": 22,
+   "Asset": 35,
+   "Debt": 2
+  }
+ },
+ "conformance": {
+  "leiCode": {
+   "total": 9677,
+   "conformant": 9677,
+   "nonconformant": 0,
+   "pct_conformant": 100.0,
+   "reasons": {},
+   "values_on_multiple_entities": 6,
+   "multi_examples": {
+    "9DJT3UXIJIZJI4WXO774": [
+     "NK-4KNVoUMf98KyDn8du8stmP",
+     "NK-d87S9qAnJrEkTN4MRhmmkB"
+    ],
+    "254900YEEOJ6K56L3058": [
+     "NK-J9MEYgzmfmcixV2TP3c6EE",
+     "gem-own-e100000120962"
+    ],
+    "5493008Z30ZS378SB107": [
+     "NK-Y6YoqnMFTXU2XezDw2hUv4",
+     "NK-mWWKaRkKgxezmwtYC2Y9sL"
+    ],
+    "335800NQ97G16BMPIR07": [
+     "NK-YAwat24GYRM7LBBoX2Kho4",
+     "gem-own-e100002007618"
+    ],
+    "213800JSZ2UUK4QQK694": [
+     "NK-bJThAbso99PAbqDzL62S5J",
+     "NK-iug77aFLjrD5aszCuhtyhb"
+    ],
+    "2534006SR63SEUSS8172": [
+     "NK-ebdrof6uHUpHeSr6S4ugv8",
+     "gem-own-e100002016473"
+    ]
+   }
+  },
+  "swiftBic": {
+   "total": 4659,
+   "conformant": 4659,
+   "nonconformant": 0,
+   "pct_conformant": 100.0,
+   "reasons": {},
+   "values_on_multiple_entities": 6,
+   "multi_examples": {
+    "CMCIFRP1": [
+     "NK-2cMKvj9gdjugWWD4Mdi2Fy",
+     "NK-czREqpPDvt8wobCvdMeDQX"
+    ],
+    "ALFACY2N": [
+     "NK-82NrAUSVbgg5VbiFVi5QdG",
+     "NK-Nwwdqjv2AZnVNidRyAHjqo"
+    ],
+    "BSABESBB": [
+     "NK-LkdLCBhYrutEMWnmi2NK8c",
+     "NK-Rs9LhtBXptFdH4PEpcsn3Q"
+    ],
+    "VTBRINDD": [
+     "NK-UYokxnYmtUKyobMbJ8VY4h",
+     "NK-mvzx7uNDj9jZf8EAxaHH2h"
+    ],
+    "VTBRCNSH": [
+     "NK-UYokxnYmtUKyobMbJ8VY4h",
+     "NK-mvzx7uNDj9jZf8EAxaHH2h"
+    ],
+    "FTBDKPPY": [
+     "NK-jF8BNiALWKUrHkWYxR3EsU",
+     "NK-nmnM3CsQ8PvYLn2xDVmEq6"
+    ]
+   }
+  },
+  "wikidataId": {
+   "total": 520812,
+   "conformant": 520812,
+   "nonconformant": 0,
+   "pct_conformant": 100.0,
+   "reasons": {},
+   "values_on_multiple_entities": 103,
+   "multi_examples": {
+    "Q100430171": [
+     "Q100430171",
+     "Q30608642"
+    ],
+    "Q1025807": [
+     "Q1025807",
+     "Q9337848"
+    ],
+    "Q10324638": [
+     "Q10324638",
+     "Q6752973"
+    ],
+    "Q1063726": [
+     "Q1063726",
+     "Q61694567"
+    ],
+    "Q106648366": [
+     "Q106648366",
+     "Q30557228"
+    ],
+    "Q10884638": [
+     "Q10884638",
+     "Q19825320"
+    ],
+    "Q1160142": [
+     "Q1160142",
+     "Q30414875"
+    ],
+    "Q11963575": [
+     "Q11963575",
+     "Q14844783"
+    ]
+   }
+  },
+  "isinCode": {
+   "total": 0,
+   "conformant": 0,
+   "nonconformant": 0,
+   "pct_conformant": null,
+   "reasons": {},
+   "values_on_multiple_entities": 0,
+   "multi_examples": {}
+  }
+ },
+ "resolution": {
+  "qid_self_identified_entities": 520572,
+  "qid_self_vs_declared_mismatch": 116,
+  "qid_mismatch_pct": 0.0223,
+  "qid_mismatch_examples": [
+   {
+    "entity_id": "Q113903355",
+    "declares_wikidataId": [
+     "Q102247251"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q122981126",
+    "declares_wikidataId": [
+     "Q111478738"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q13534583",
+    "declares_wikidataId": [
+     "Q12455771"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q138811132",
+    "declares_wikidataId": [
+     "Q138719813"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q14844783",
+    "declares_wikidataId": [
+     "Q11963575"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q15993808",
+    "declares_wikidataId": [
+     "Q124333709"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q16119148",
+    "declares_wikidataId": [
+     "Q12223619"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q16230565",
+    "declares_wikidataId": [
+     "Q12976795"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q16297761",
+    "declares_wikidataId": [
+     "Q130484557"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q16297784",
+    "declares_wikidataId": [
+     "Q6892410"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q16336322",
+    "declares_wikidataId": [
+     "Q64852195"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q16585292",
+    "declares_wikidataId": [
+     "Q12391280"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q17143283",
+    "declares_wikidataId": [
+     "Q16269497"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q17305664",
+    "declares_wikidataId": [
+     "Q12447376"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q17306050",
+    "declares_wikidataId": [
+     "Q15645360"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q18280604",
+    "declares_wikidataId": [
+     "Q16939969"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q18763782",
+    "declares_wikidataId": [
+     "Q12447362"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q18816010",
+    "declares_wikidataId": [
+     "Q12449450"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q18816025",
+    "declares_wikidataId": [
+     "Q15677046"
+    ],
+    "schema": "Person"
+   },
+   {
+    "entity_id": "Q18816156",
+    "declares_wikidataId": [
+     "Q15697388"
+    ],
+    "schema": "Person"
+   }
+  ],
+  "lei_shared_across_entities": 6,
+  "lei_collision_examples": {
+   "9DJT3UXIJIZJI4WXO774": [
+    "NK-4KNVoUMf98KyDn8du8stmP",
+    "NK-d87S9qAnJrEkTN4MRhmmkB"
+   ],
+   "254900YEEOJ6K56L3058": [
+    "NK-J9MEYgzmfmcixV2TP3c6EE",
+    "gem-own-e100000120962"
+   ],
+   "5493008Z30ZS378SB107": [
+    "NK-Y6YoqnMFTXU2XezDw2hUv4",
+    "NK-mWWKaRkKgxezmwtYC2Y9sL"
+   ],
+   "335800NQ97G16BMPIR07": [
+    "NK-YAwat24GYRM7LBBoX2Kho4",
+    "gem-own-e100002007618"
+   ],
+   "213800JSZ2UUK4QQK694": [
+    "NK-bJThAbso99PAbqDzL62S5J",
+    "NK-iug77aFLjrD5aszCuhtyhb"
+   ],
+   "2534006SR63SEUSS8172": [
+    "NK-ebdrof6uHUpHeSr6S4ugv8",
+    "gem-own-e100002016473"
+   ]
+  },
+  "bic_shared_across_entities": 6,
+  "wikidata_shared_across_entities": 103,
+  "wd_collision_examples": {
+   "Q100430171": [
+    "Q100430171",
+    "Q30608642"
+   ],
+   "Q1025807": [
+    "Q1025807",
+    "Q9337848"
+   ],
+   "Q10324638": [
+    "Q10324638",
+    "Q6752973"
+   ],
+   "Q1063726": [
+    "Q1063726",
+    "Q61694567"
+   ],
+   "Q106648366": [
+    "Q106648366",
+    "Q30557228"
+   ],
+   "Q10884638": [
+    "Q10884638",
+    "Q19825320"
+   ],
+   "Q1160142": [
+    "Q1160142",
+    "Q30414875"
+   ],
+   "Q11963575": [
+    "Q11963575",
+    "Q14844783"
+   ]
+  }
+ }
+}
