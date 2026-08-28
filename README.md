@@ -33,6 +33,23 @@ python3 pipeline/analyze.py                          # validate each scheme, fin
 The bulk file URL rotates; resolve it from the stable redirect at
 `https://data.opensanctions.org/datasets/latest/default/entities.ftm.json`.
 
+
+## Verification (open-ontologies engine + SHACL)
+
+The assurance layer is real, not a diagram. `ontology/resolution-assurance.ttl` (OWL 2), `skos/schemes.ttl` (scheme rules as data, strong vs weak), and `shapes/resolution-shapes.ttl` (one SHACL shape per defect class) are validated and linted clean by the open-ontologies engine v1.2.0 (the Rust binary). `shapes/instances.ttl` is a known-answer fixture built from the real collision data: the 6 LEI collisions, 5 QID self-inconsistencies, and one clean control (JPMorgan's full 20-char LEI, cardinality 1, self-consistent). Running the shapes over it:
+
+- StrongIdentifierCollisionShape fires 6 times (the real colliding LEIs).
+- SelfInconsistentIdentifierShape fires 5 times (QID key disagreeing with declared cross-reference).
+- The clean control is not flagged.
+
+So a non-unique strong identifier and a self-inconsistent cross-reference each fail a check, and a correct one passes. That is the gate the red-team proposes, demonstrated on this register's own defects.
+
+```
+open-ontologies validate ontology/resolution-assurance.ttl   # ok
+open-ontologies lint shapes/resolution-shapes.ttl            # 0 issues
+python3 -m pytest tests/                                      # known-answer shapes
+```
+
 ## Method, transferable
 
 Declare each identifier scheme's own rules (ISO 17442 + ISO 7064 for LEI, ISO 9362 for BIC, the QID and ISIN patterns), validate every embedded value against its declared scheme, and separately test whether any value resolves to more than one entity. The same method is shipped across bank, insurance, scholarly, learning-standards, biodiversity and health registers at github.com/fabio-rovai and gov.tesseract.academy/research/.

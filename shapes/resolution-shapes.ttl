@@ -1,0 +1,55 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix res:  <https://gov.tesseract.academy/def/resolution#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# One shape per defect class, so the validation report is the merge-review queue.
+
+# Structural: every identifier assertion names an entity, a scheme, a value, conformance.
+res:IdentifierAssertionShape a sh:NodeShape ;
+    sh:targetClass res:IdentifierAssertion ;
+    sh:property [ sh:path res:aboutEntity ; sh:minCount 1 ] ;
+    sh:property [ sh:path res:usesScheme ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path res:identifierValue ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path res:schemeConformant ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ] .
+
+# Scheme conformance: a non-conformant value must never be used downstream.
+res:NonConformantIdentifierShape a sh:NodeShape ;
+    sh:targetClass res:IdentifierAssertion ;
+    sh:sparql [
+        sh:message "Identifier value does not conform to its scheme; it must not be used as a merge key." ;
+        sh:select """
+            PREFIX res: <https://gov.tesseract.academy/def/resolution#>
+            SELECT $this ?value WHERE {
+                $this res:schemeConformant false .
+                $this res:identifierValue ?value .
+            }
+        """ ] .
+
+# Resolution collision: a STRONG-scheme identifier value on more than one entity.
+res:StrongIdentifierCollisionShape a sh:NodeShape ;
+    sh:targetClass res:IdentifierAssertion ;
+    sh:sparql [
+        sh:message "A strong-scheme identifier resolves to more than one entity; merge-review required." ;
+        sh:select """
+            PREFIX res: <https://gov.tesseract.academy/def/resolution#>
+            SELECT $this ?value WHERE {
+                $this res:usesScheme ?scheme .
+                ?scheme res:strongScheme true .
+                $this res:resolutionCardinality ?c .
+                $this res:identifierValue ?value .
+                FILTER (?c > 1)
+            }
+        """ ] .
+
+# Self-consistency: a QID-keyed entity whose declared cross-reference disagrees with its key.
+res:SelfInconsistentIdentifierShape a sh:NodeShape ;
+    sh:targetClass res:IdentifierAssertion ;
+    sh:sparql [
+        sh:message "Entity keyed by an identifier declares a different identifier as its cross-reference; must not be used to bridge." ;
+        sh:select """
+            PREFIX res: <https://gov.tesseract.academy/def/resolution#>
+            SELECT $this ?value WHERE {
+                $this res:selfConsistent false .
+                $this res:identifierValue ?value .
+            }
+        """ ] .

@@ -1,0 +1,101 @@
+@prefix res: <https://gov.tesseract.academy/def/resolution#> .
+@prefix scheme: <https://gov.tesseract.academy/def/resolution/scheme#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+res:ia-lei-0 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-NK-4KNVoUMf98KyDn8du8stmP , res:ent-NK-d87S9qAnJrEkTN4MRhmmkB ;
+  res:usesScheme scheme:LEI ;
+  res:identifierValue "9DJT3UXIJIZJI4WXO774" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 2 ;
+  res:selfConsistent true .
+res:ent-NK-4KNVoUMf98KyDn8du8stmP a res:ResolvedEntity . res:ent-NK-d87S9qAnJrEkTN4MRhmmkB a res:ResolvedEntity .
+res:ia-lei-1 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-NK-J9MEYgzmfmcixV2TP3c6EE , res:ent-gem-own-e100000120962 ;
+  res:usesScheme scheme:LEI ;
+  res:identifierValue "254900YEEOJ6K56L3058" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 2 ;
+  res:selfConsistent true .
+res:ent-NK-J9MEYgzmfmcixV2TP3c6EE a res:ResolvedEntity . res:ent-gem-own-e100000120962 a res:ResolvedEntity .
+res:ia-lei-2 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-NK-Y6YoqnMFTXU2XezDw2hUv4 , res:ent-NK-mWWKaRkKgxezmwtYC2Y9sL ;
+  res:usesScheme scheme:LEI ;
+  res:identifierValue "5493008Z30ZS378SB107" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 2 ;
+  res:selfConsistent true .
+res:ent-NK-Y6YoqnMFTXU2XezDw2hUv4 a res:ResolvedEntity . res:ent-NK-mWWKaRkKgxezmwtYC2Y9sL a res:ResolvedEntity .
+res:ia-lei-3 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-NK-YAwat24GYRM7LBBoX2Kho4 , res:ent-gem-own-e100002007618 ;
+  res:usesScheme scheme:LEI ;
+  res:identifierValue "335800NQ97G16BMPIR07" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 2 ;
+  res:selfConsistent true .
+res:ent-NK-YAwat24GYRM7LBBoX2Kho4 a res:ResolvedEntity . res:ent-gem-own-e100002007618 a res:ResolvedEntity .
+res:ia-lei-4 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-NK-bJThAbso99PAbqDzL62S5J , res:ent-NK-iug77aFLjrD5aszCuhtyhb ;
+  res:usesScheme scheme:LEI ;
+  res:identifierValue "213800JSZ2UUK4QQK694" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 2 ;
+  res:selfConsistent true .
+res:ent-NK-bJThAbso99PAbqDzL62S5J a res:ResolvedEntity . res:ent-NK-iug77aFLjrD5aszCuhtyhb a res:ResolvedEntity .
+res:ia-lei-5 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-NK-ebdrof6uHUpHeSr6S4ugv8 , res:ent-gem-own-e100002016473 ;
+  res:usesScheme scheme:LEI ;
+  res:identifierValue "2534006SR63SEUSS8172" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 2 ;
+  res:selfConsistent true .
+res:ent-NK-ebdrof6uHUpHeSr6S4ugv8 a res:ResolvedEntity . res:ent-gem-own-e100002016473 a res:ResolvedEntity .
+res:ia-qid-0 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-Q113903355 ;
+  res:usesScheme scheme:WikidataQID ;
+  res:identifierValue "Q113903355" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 1 ;
+  res:selfConsistent false .
+res:ent-Q113903355 a res:ResolvedEntity .
+res:ia-qid-1 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-Q122981126 ;
+  res:usesScheme scheme:WikidataQID ;
+  res:identifierValue "Q122981126" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 1 ;
+  res:selfConsistent false .
+res:ent-Q122981126 a res:ResolvedEntity .
+res:ia-qid-2 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-Q13534583 ;
+  res:usesScheme scheme:WikidataQID ;
+  res:identifierValue "Q13534583" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 1 ;
+  res:selfConsistent false .
+res:ent-Q13534583 a res:ResolvedEntity .
+res:ia-qid-3 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-Q138811132 ;
+  res:usesScheme scheme:WikidataQID ;
+  res:identifierValue "Q138811132" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 1 ;
+  res:selfConsistent false .
+res:ent-Q138811132 a res:ResolvedEntity .
+res:ia-qid-4 a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-Q14844783 ;
+  res:usesScheme scheme:WikidataQID ;
+  res:identifierValue "Q14844783" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 1 ;
+  res:selfConsistent false .
+res:ent-Q14844783 a res:ResolvedEntity .
+res:ia-clean a res:IdentifierAssertion ;
+  res:aboutEntity res:ent-clean ;
+  res:usesScheme scheme:LEI ;
+  res:identifierValue "7H6GLXDRUGQFU57RNE97" ;
+  res:schemeConformant true ;
+  res:resolutionCardinality 1 ;
+  res:selfConsistent true .
+res:ent-clean a res:ResolvedEntity .

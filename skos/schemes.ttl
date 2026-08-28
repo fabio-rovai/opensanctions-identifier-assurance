@@ -1,0 +1,33 @@
+@prefix scheme: <https://gov.tesseract.academy/def/resolution/scheme#> .
+@prefix res:  <https://gov.tesseract.academy/def/resolution#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+scheme:SchemeRegistry a skos:ConceptScheme ;
+    dcterms:title "Foreign identifier scheme registry"@en ;
+    dcterms:description "Each identifier scheme declares its own conformance rule and whether it is strong enough to serve as a merge key."@en .
+
+scheme:LEI a skos:Concept ;
+    skos:inScheme scheme:SchemeRegistry ; skos:prefLabel "Legal Entity Identifier"@en ;
+    res:strongScheme true ;
+    skos:note "ISO 17442: 20 chars, ISO 7064 MOD 97-10 check digit. Identifies exactly one legal entity, so a value on more than one entity is a merge-review signal."@en .
+
+scheme:BIC a skos:Concept ;
+    skos:inScheme scheme:SchemeRegistry ; skos:prefLabel "SWIFT/BIC"@en ;
+    res:strongScheme true .
+
+scheme:WikidataQID a skos:Concept ;
+    skos:inScheme scheme:SchemeRegistry ; skos:prefLabel "Wikidata entity identifier"@en ;
+    res:strongScheme true ;
+    skos:note "Where the resolved entity is keyed by a QID, its declared wikidataId must equal that key."@en .
+
+scheme:deu_registernummer a skos:Concept ;
+    skos:inScheme scheme:SchemeRegistry ; skos:prefLabel "German Registernummer"@en ;
+    res:strongScheme false ;
+    skos:note "Documented strong then demoted to weak once found non-unique. Held here as weak, so it is not eligible as a merge key."@en .
+
+scheme:usa_sam_uei a skos:Concept ;
+    skos:inScheme scheme:SchemeRegistry ; skos:prefLabel "US SAM UEI"@en ;
+    res:strongScheme false .

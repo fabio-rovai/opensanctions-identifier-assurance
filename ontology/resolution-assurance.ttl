@@ -1,0 +1,53 @@
+@prefix res:  <https://gov.tesseract.academy/def/resolution#> .
+@prefix scheme: <https://gov.tesseract.academy/def/resolution/scheme#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://gov.tesseract.academy/def/resolution>
+    a owl:Ontology ;
+    dcterms:title "Resolution assurance ontology"@en ;
+    dcterms:description "A small OWL 2 ontology for auditing entity-resolution pipelines that embed foreign identifiers. An IdentifierAssertion is a dated claim that a resolved entity bears an identifier in a scheme; conformance is judged against the scheme's own declared rules; and a strong identifier that resolves to more than one entity is a merge-review signal."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:versionInfo "0.1.0" .
+
+res:ResolvedEntity a owl:Class ;
+    rdfs:label "Resolved entity"@en ;
+    rdfs:comment "An entity produced by a resolution pipeline by merging references believed to denote one real-world entity."@en .
+
+res:IdentifierAssertion a owl:Class ;
+    rdfs:label "Identifier assertion"@en ;
+    rdfs:comment "A claim that a resolved entity bears an identifier value in a named scheme. Conformance is a property of the claim, not of the value in isolation."@en .
+
+res:aboutEntity a owl:ObjectProperty ;
+    rdfs:domain res:IdentifierAssertion ; rdfs:range res:ResolvedEntity ;
+    rdfs:label "about entity"@en .
+
+res:usesScheme a owl:ObjectProperty ;
+    rdfs:domain res:IdentifierAssertion ; rdfs:range skos:Concept ;
+    rdfs:label "uses scheme"@en .
+
+res:identifierValue a owl:DatatypeProperty ;
+    rdfs:domain res:IdentifierAssertion ; rdfs:range xsd:string ;
+    rdfs:label "identifier value"@en .
+
+res:schemeConformant a owl:DatatypeProperty ;
+    rdfs:domain res:IdentifierAssertion ; rdfs:range xsd:boolean ;
+    rdfs:label "scheme conformant"@en .
+
+res:strongScheme a owl:DatatypeProperty ;
+    rdfs:domain skos:Concept ; rdfs:range xsd:boolean ;
+    rdfs:label "strong scheme"@en ;
+    rdfs:comment "True where the scheme is asserted to identify exactly one entity, so its value may be used as a merge key. Some schemes documented as strong are demoted here once found non-unique."@en .
+
+res:resolutionCardinality a owl:DatatypeProperty ;
+    rdfs:domain res:IdentifierAssertion ; rdfs:range xsd:integer ;
+    rdfs:label "resolution cardinality"@en ;
+    rdfs:comment "The number of distinct resolved entities this identifier value is asserted for. Above one on a strong scheme is a merge-review signal."@en .
+
+res:selfConsistent a owl:DatatypeProperty ;
+    rdfs:domain res:IdentifierAssertion ; rdfs:range xsd:boolean ;
+    rdfs:label "self consistent"@en ;
+    rdfs:comment "True where an entity keyed by an identifier declares the same identifier as its cross-reference. False where the canonical id and the declared cross-reference disagree."@en .
